@@ -6,7 +6,7 @@
   "scripts": {
     "dever": "parcel ./index.html",
     "dev": "parcel ./mod.ts",
-    "build": "parcel build ./mod.ts --target browser",
+    "build": "parcel build ./mod.ts --out-file mod.mjs --experimental-scope-hoisting --no-content-hash",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
