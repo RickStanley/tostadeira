@@ -18,5 +18,4 @@ export {
     hashCode,
     classMap,
     randomizeNumber,
-    ClassInfo
 };
