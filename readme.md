@@ -22,7 +22,7 @@ There are some pre-defined CSS Variables in toaster's style:
 --torrada-color-text-success: #0F1D0F
 ```
 you can redefine them in your own css if you want, I suggest writing to `:root {}`.
+
 ## TODO
 
-- [ ] Change package bundler to another that resolves functions better.
 - [x] Change `lit-html` to DRY template generator, to provide minimum size in the resulting module.

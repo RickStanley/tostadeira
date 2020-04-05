@@ -1,16 +1,8 @@
-import { ClassInfo, classMap, randomizeNumber } from "./utils";
-
-interface TorradaSettings {
-  error?: boolean;
-  success?: boolean;
-  dismissable?: boolean;
-  timeout?: number;
-  classes?: string[];
-}
+import { classMap, randomizeNumber } from "./utils";
 
 const dismissAnimationOffset = 400;
 
-let root: HTMLDivElement;
+let root;
 
 const setupRoot = () => {
   root = document.createElement('div');
@@ -62,7 +54,7 @@ const setupRoot = () => {
   document.body.appendChild(root);
 
   root.addEventListener('click', event => {
-    const dismissable = (event.target as Element).closest('[dismissable]');
+    const dismissable = event.target.closest('[dismissable]');
     if (dismissable) {
       dismissable.removeAttribute('active');
       setTimeout(() => {
@@ -72,13 +64,13 @@ const setupRoot = () => {
   });
 };
 
-const setupTemplate = (id: string, content: string, classes: ClassInfo, dismissable: boolean) => {
+const setupTemplate = (id, content, classes, dismissable) => {
   return `<div id="${id}" class="${classMap(classes)}" ${dismissable ? 'dismissable' : ''}>
   <p>${content}</p>
 </div>`;
 }
 
-const pop = (content: string, settings?: TorradaSettings) => {
+const pop = (content, settings) => {
   const classes = {
     torrada: true,
   };
